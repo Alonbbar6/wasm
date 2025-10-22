@@ -1,6 +1,6 @@
 # Build artifacts
 build/
-*.wasm
+# *.wasm  # Commented out to allow math.wasm in repo for GitHub Pages
 *.js
 *.o
 *.a

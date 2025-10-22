@@ -46,17 +46,34 @@ For more detailed installation instructions, visit: [Emscripten Getting Started]
 
 ## 🏗️ Building the Application
 
-### Option 1: Using the Build Script
+### For GitHub Pages Deployment
+**Important**: For GitHub Pages to work, you need to build the WASM file and commit it to the repository.
+
+1. **Install Emscripten** (see Prerequisites section above)
+2. **Build the WASM file**:
+   ```bash
+   ./build.sh
+   ```
+3. **Commit the generated math.wasm file**:
+   ```bash
+   git add math.wasm
+   git commit -m "Add built WASM file for GitHub Pages"
+   git push
+   ```
+
+### Development Build Options
+
+#### Option 1: Using the Build Script
 ```bash
 ./build.sh
 ```
 
-### Option 2: Using Make
+#### Option 2: Using Make
 ```bash
 make
 ```
 
-### Option 3: Manual Build
+#### Option 3: Manual Build
 ```bash
 emcc math.c -o math.wasm -s EXPORTED_FUNCTIONS="['_add', '_multiply', '_fibonacci', '_factorial', '_string_length', '_array_sum', '_malloc', '_free']" -s EXPORTED_RUNTIME_METHODS="['ccall', 'cwrap']" -s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=16MB -O2 --no-entry
 ```
