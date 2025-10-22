@@ -1,0 +1,25 @@
+{
+  "name": "basic-wasm-app",
+  "version": "1.0.0",
+  "description": "A basic WebAssembly application for testing C functions in the browser",
+  "main": "index.html",
+  "scripts": {
+    "build": "./build.sh",
+    "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "clean": "rm -rf build && rm -f math.wasm",
+    "help": "echo 'Available scripts: build, serve, dev, clean'"
+  },
+  "keywords": [
+    "webassembly",
+    "wasm",
+    "c",
+    "emscripten",
+    "demo"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
